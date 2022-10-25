@@ -1,0 +1,1297 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Swagger Petstore",
+    "license": {
+      "name": "MIT"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:5001"
+    }
+  ],
+  "paths": {
+    "/identity/token": {
+      "post": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "Generating an IAM token",
+        "description": "Generate an IBM Cloud® Identity and Access Management (IAM) token by using either your [IAM API key](https://cloud.ibm.com/docs/iam?topic=iam-userapikey#userapikey) or a [service ID's API key](https://cloud.ibm.com/docs/iam?topic=iam-serviceidapikeys#serviceidapikeys) IBM Cloud APIs can be accessed only by users who are authorized by an assigned IAM role.\nEach user who is calling the API must pass credentials for the API to authenticate.\n\nYou can generate an IAM token by using either your IBM Cloud API key or a service ID's API key.\nThe API key is a permanent credential that can be reused if you don't lose the API key value or delete the API key in the account.\nThis process is also used if you are developing an application that needs to work with other IBM Cloud services.\nYou must use a service ID API key to get an access token to be passed to each of the IBM Cloud services.\n\n:::note\nAn access token is a temporary credential that expires after 1 hour.\nAfter the acquired token expires, you must generate a new token to continue calling IBM Cloud or service APIs, and you can perform only actions that are allowed by your level of assigned access within all accounts.\n:::",
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthForm"
+              }
+            }
+          },
+          "required": true
+        },
+        "security": [
+          {
+            "//": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/catalogueusocfdi/all": {
+      "get": {
+        "summary": "[GET] - Usos CFDI",
+        "operationId": "Obtener el catálogo de usos de CFDI",
+        "tags": [
+          "Catalogos"
+        ],
+        "description": "Este endpoint muestra nuestro catalogo de usos de CFDI",
+        "parameters": [
+          {
+            "name": "API-ID",
+            "in": "header",
+            "description": "Generada por Stampi",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "API-Key",
+            "in": "header",
+            "description": "Generada por Stampi",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/catalogueregimenfiscal/all": {
+      "get": {
+        "summary": "[GET] - Régimen Fiscal",
+        "operationId": "Obtener el catálogo de régimen fiscal",
+        "tags": [
+          "Catalogos"
+        ],
+        "description": "Este endpoint muestra nuestro catálogo de régimen fiscal",
+        "parameters": [
+          {
+            "name": "API-ID",
+            "in": "header",
+            "description": "Generada por Stampi",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "API-Key",
+            "in": "header",
+            "description": "Generada por Stampi",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/catalogueclaveprodserv/searchv2": {
+      "get": {
+        "summary": "[GET] - Productos y servicios",
+        "operationId": "Busca dentro del catálogo de productos y servicios",
+        "tags": [
+          "Catalogos"
+        ],
+        "description": "Este endpoint busca dentro de nuestro catálogo de productos y servicios, solo necesita pasar una ***keyword*** para empezar a buscar",
+        "parameters": [
+          {
+            "name": "API-ID",
+            "in": "header",
+            "description": "Generada por Stampi",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "API-Key",
+            "in": "header",
+            "description": "Generada por Stampi",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "keyword",
+            "in": "query",
+            "description": "Parámetro de busqueda",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/catalogueclaveunidad/searchv2": {
+      "get": {
+        "summary": "[GET] - Unidades",
+        "operationId": "Busca dentro del catálogo de unidades",
+        "tags": [
+          "Catalogos"
+        ],
+        "description": "Este endpoint busca dentro de nuestro catálogo de unidades, solo necesita pasar una ***keyword*** para empezar a buscar",
+        "parameters": [
+          {
+            "name": "API-ID",
+            "in": "header",
+            "description": "Generada por Stampi",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "API-Key",
+            "in": "header",
+            "description": "Generada por Stampi",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "keyword",
+            "in": "query",
+            "description": "Parámetro de busqueda",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/concept/": {
+      "get": {
+        "summary": "[GET] - Conceptos",
+        "operationId": "Obtene todos los conceptos (productos y servicios) por compañia compañia",
+        "tags": [
+          "Conceptos"
+        ],
+        "description": "Para sus conceptos (productos y servicios) debe enviar en los encabezados el ***ID*** de la ***compañia*** a la que pertenece usted como usuario [Endpoints and storage locations](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints).",
+        "parameters": [
+          {
+            "name": "API-ID",
+            "in": "header",
+            "description": "Generada por Stampi",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "API-Key",
+            "in": "header",
+            "description": "Generada por Stampi",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "CompanyID",
+            "in": "header",
+            "description": "Hace referencia al identificador de la compañia a la que pertenece el usuario.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      },
+      "post": {
+        "summary": "[POST] - Crear un concepto",
+        "operationId": "Crear un nuevo concepto (productos ó servicio)",
+        "tags": [
+          "Conceptos"
+        ],
+        "description": "Para crear un nuevo concepto debe enviar en los encabezados el ***ID*** de la ***compañia*** a la que pertenece usted como usuario y llenar correctamente el cuerpo que requiere el concepto. Mas abajo se muestra el cuerpo del concepto.",
+        "parameters": [
+          {
+            "name": "API-ID",
+            "in": "header",
+            "description": "Generada por Stampi",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "API-Key",
+            "in": "header",
+            "description": "Generada por Stampi",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "CompanyID",
+            "in": "header",
+            "description": "Hace referencia al identificador de la compañia a la que pertenece el usuario.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "869dc152-079f-11ed-ae2c-b67051596a26"
+              ]
+            }
+          },
+          {
+            "name": "Key",
+            "in": "header",
+            "description": "Identificador único del concepto",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "enum": [
+                "d32ed732-abd2-4c46-8d24-bfaf640e3025"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConceptForm"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/concept/{id}": {
+      "get": {
+        "summary": "[GET] - Conceptos por id",
+        "operationId": "Obtene un concepto por id",
+        "tags": [
+          "Conceptos"
+        ],
+        "description": "Para obtener un concepto en especifico debe enviar como parte de la url el ***ID*** del concepto a consultar y en los encabezados el ***ID*** de la ***compañia*** a la que pertenece usted como usuario [Endpoints and storage locations](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints).",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Identificador del concepto",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "API-ID",
+            "in": "header",
+            "description": "Generada por Stampi",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "API-Key",
+            "in": "header",
+            "description": "Generada por Stampi",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "CompanyID",
+            "in": "header",
+            "description": "Hace referencia al identificador de la compañia a la que pertenece el usuario.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "869dc152-079f-11ed-ae2c-b67051596a26"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      },
+      "put": {
+        "summary": "[PUT] - Modificar un concepto",
+        "operationId": "Modificar concepto (productos ó servicio)",
+        "tags": [
+          "Conceptos"
+        ],
+        "description": "Para modificar un concepto debe enviar en los encabezados el ***ID*** de la ***compañia*** a la que pertenece usted como usuario y llenar correctamente el cuerpo que requiere el concepto. Mas abajo se muestra el cuerpo del concepto.",
+        "parameters": [
+          {
+            "name": "API-ID",
+            "in": "header",
+            "description": "Generada por Stampi",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "API-Key",
+            "in": "header",
+            "description": "Generada por Stampi",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "CompanyID",
+            "in": "header",
+            "description": "Hace referencia al identificador de la compañia a la que pertenece el usuario.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "869dc152-079f-11ed-ae2c-b67051596a26"
+              ]
+            }
+          },
+          {
+            "name": "ID",
+            "in": "path",
+            "description": "Identificador del concepto",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "enum": [
+                "d32ed732-abd2-4c46-8d24-bfaf640e3025"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConceptForm"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/receiver/all": {
+      "get": {
+        "summary": "[GET] - Clientes",
+        "operationId": "Obtener clientes que pertenecen a una compañia",
+        "tags": [
+          "Clientes"
+        ],
+        "description": "Para obtener los ***clientes (receivers)*** por compañia, debe proporcionar el los encabezados ***API-ID y API-Key*** ",
+        "parameters": [
+          {
+            "name": "API-ID",
+            "in": "header",
+            "description": "Generada por Stampi",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "API-Key",
+            "in": "header",
+            "description": "Generada por Stampi",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/receiver/one/{id}": {
+      "get": {
+        "summary": "[GET] - Cliente por id",
+        "operationId": "Obtener un cliente por id",
+        "tags": [
+          "Clientes"
+        ],
+        "description": "Para obtener un ***cliente (receiver)*** por su identificador, ebe proporcionar el los encabezados ***API-ID, API-Key*** y  ***ID*** del cliente ",
+        "parameters": [
+          {
+            "name": "API-ID",
+            "in": "header",
+            "description": "Generada por Stampi",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "API-Key",
+            "in": "header",
+            "description": "Generada por Stampi",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Identificador del cliente.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/receiver": {
+      "post": {
+        "summary": "[POST] - Crear cliente",
+        "operationId": "Crear un nuevo cliente",
+        "tags": [
+          "Clientes"
+        ],
+        "description": "Para crear un ***cliente (receivers)***, debe proporcionar el los encabezados ***API-ID, API-Key y CompanyID perteneciente***. Al igual que llenar correctamente la estructura que se muestra mas abajo ",
+        "parameters": [
+          {
+            "name": "API-ID",
+            "in": "header",
+            "description": "Generada por Stampi",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "API-Key",
+            "in": "header",
+            "description": "Generada por Stampi",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "CompanyID",
+            "in": "header",
+            "description": "Hace referencia al identificador de la compañia a la que pertenece el usuario.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReceiverForm"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      },
+      "put": {
+        "summary": "[PUT] - Actualizar cliente",
+        "operationId": "Actualizar un cliente existente",
+        "tags": [
+          "Clientes"
+        ],
+        "description": "Para actualizar un ***cliente (receivers)***, debe proporcionar el los encabezados ***API-ID, API-Key y CompanyID perteneciente***. Al igual que llenar correctamente la estructura actualizada que se muestra mas abajo",
+        "parameters": [
+          {
+            "name": "API-ID",
+            "in": "header",
+            "description": "Generada por Stampi",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "API-Key",
+            "in": "header",
+            "description": "Generada por Stampi",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "CompanyID",
+            "in": "header",
+            "description": "Hace referencia al identificador de la compañia a la que pertenece el usuario.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReceiverForm"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/receiver/{id}": {
+      "delete": {
+        "summary": "[DELETE] - Eliminar un cliente",
+        "operationId": "Eliminar un cliente por id",
+        "tags": [
+          "Clientes"
+        ],
+        "description": "Para eliminar un cliente debe proporcionar el los encabezados ***API-ID y API-Key*** y  ***ID*** del cliente que desee eliminar.",
+        "parameters": [
+          {
+            "name": "API-ID",
+            "in": "header",
+            "description": "Generada por Stampi",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "API-Key",
+            "in": "header",
+            "description": "Generada por Stampi",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Identificador único del cliente",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/issuer/all": {
+      "get": {
+        "summary": "[GET] - Emisores",
+        "operationId": "Obtener clientes que pertenecen a una compañia",
+        "tags": [
+          "Emisores"
+        ],
+        "description": "Para obtener los ***emisores (issuers)*** por compañia, debe proporcionar el los encabezados ***API-ID y API-Key*** ",
+        "parameters": [
+          {
+            "name": "API-ID",
+            "in": "header",
+            "description": "Generada por Stampi",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "API-Key",
+            "in": "header",
+            "description": "Generada por Stampi",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/issuer": {
+      "post": {
+        "summary": "[POST] - Crear emisor",
+        "operationId": "Crear un nuevo emisor",
+        "tags": [
+          "Emisores"
+        ],
+        "description": "Para crear un ***emisor (issuer)***, debe proporcionar el los encabezados ***API-ID, API-Key y CompanyID perteneciente***, al igual que los archivos ***.cer y .ker*** con su contraseña correspondiente",
+        "parameters": [
+          {
+            "name": "API-ID",
+            "in": "header",
+            "description": "Generada por Stampi",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "API-Key",
+            "in": "header",
+            "description": "Generada por Stampi",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "CompanyID",
+            "in": "header",
+            "description": "Hace referencia al identificador de la compañia a la que pertenece el usuario.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IssuerForm"
+              }
+            }
+          },
+          "accept": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IssuerForm"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      },
+      "put": {
+        "summary": "[PUT] - Actualizar Emisor",
+        "operationId": "Actualizar emisor",
+        "tags": [
+          "Emisores"
+        ],
+        "description": "Para actualizar un ***emisor (issuer)***, debe proporcionar el los encabezados ***API-ID, API-Key y CompanyID perteneciente***, al igual que los archivos ***.cer y .ker*** con su contraseña correspondiente",
+        "parameters": [
+          {
+            "name": "API-ID",
+            "in": "header",
+            "description": "Generada por Stampi",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "API-Key",
+            "in": "header",
+            "description": "Generada por Stampi",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "CompanyID",
+            "in": "header",
+            "description": "Hace referencia al identificador de la compañia a la que pertenece el usuario.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IssuerForm"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/issuer/one/{id}": {
+      "get": {
+        "summary": "[GET] - Emisor por id",
+        "operationId": "Obtener un emisor por id",
+        "tags": [
+          "Emisores"
+        ],
+        "description": "Para obtener un ***Emisor (issuer)*** por su identificador, debe proporcionar el id del emisor",
+        "parameters": [
+          {
+            "name": "API-ID",
+            "in": "header",
+            "description": "Generada por Stampi",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "API-Key",
+            "in": "header",
+            "description": "Generada por Stampi",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Identificador del cliente.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      },
+      "delete": {
+        "summary": "[DELETE] - Eliminar un emisor",
+        "operationId": "Eliminar emisor por id",
+        "tags": [
+          "Emisores"
+        ],
+        "description": "Para eliminar un emisor debe proporcionar el los encabezados ***API-ID y API-Key*** y  ***ID*** del emisor que desee eliminar.",
+        "parameters": [
+          {
+            "name": "API-ID",
+            "in": "header",
+            "description": "Generada por Stampi",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "API-Key",
+            "in": "header",
+            "description": "Generada por Stampi",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Identificador del emisor.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "BeAreR"
+      },
+      "BasicAuth": {
+        "type": "http",
+        "scheme": "basic"
+      }
+    },
+    "schemas": {
+      "AuthForm": {
+        "type": "object",
+        "properties": {
+          "grant_type": {
+            "type": "string",
+            "enum": [
+              "said"
+            ]
+          },
+          "apikey": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "grant_type",
+          "apikey"
+        ]
+      },
+      "UserForm": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "enum": [
+              "yourName"
+            ]
+          },
+          "mail": {
+            "type": "string",
+            "enum": [
+              "yourEmail"
+            ]
+          },
+          "password": {
+            "type": "string",
+            "enum": [
+              "yourPassword"
+            ]
+          },
+          "roleId": {
+            "type": "string",
+            "enum": [
+              "yourRoleId"
+            ]
+          },
+          "companyId": {
+            "type": "string",
+            "enum": [
+              "yourCompanyId"
+            ]
+          }
+        },
+        "required": [
+          "name",
+          "mail",
+          "password"
+        ]
+      },
+      "UserResponse": {
+        "type": "object",
+        "properties": {
+          "Body": {
+            "type": "object",
+            "properties": {
+              "apikey": {
+                "type": "string"
+              },
+              "id": {
+                "type": "string"
+              },
+              "createdAt": {
+                "type": "object"
+              },
+              "updatedAt": {
+                "type": "object"
+              },
+              "name": {
+                "type": "string"
+              },
+              "mail": {
+                "type": "string"
+              },
+              "timezone": {
+                "type": "string"
+              },
+              "dateOfBirth": {
+                "type": "object"
+              },
+              "country": {
+                "type": "string"
+              },
+              "currency": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "providerId": {
+                "type": "string"
+              },
+              "companyId": {
+                "type": "string"
+              },
+              "roleId": {
+                "type": "string"
+              },
+              "job": {
+                "type": "null"
+              },
+              "verified": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "object"
+              },
+              "stripeID": {
+                "type": "null"
+              },
+              "hash": {
+                "type": "null"
+              },
+              "companies": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      },
+      "ConceptForm": {
+        "type": "object",
+        "properties": {
+          "descripcion": {
+            "type": "string",
+            "enum": [
+              "MyFirstProducts"
+            ]
+          },
+          "descripcionClaveProdServ": {
+            "type": "string",
+            "enum": [
+              "Agua (50202301)"
+            ],
+            "description": "Este campo se conforma de las descripciones y códigos de los productos y servicios registrados en el catalogo de productos y servicios del SAT"
+          },
+          "claveProdServ": {
+            "type": "string",
+            "enum": [
+              "50202301"
+            ],
+            "description": "Este campo se conforma del código de los productos y servicios registrados en el catalogo de productos y servicios del SAT"
+          },
+          "descripcionClaveUnidad": {
+            "type": "string",
+            "enum": [
+              "Pieza (Pza) (H87)"
+            ],
+            "description": "Este campo hace referencia a la descripcion completa de la unidad en el que se mide el producto o servicio. La descripcion completa se extraen del catalogo de unidades del SAT"
+          },
+          "symbol": {
+            "type": "string",
+            "enum": [
+              "Pza"
+            ],
+            "description": "Este campo hace referencia al símbolo de la unidad en el que se mide el producto o servicio. Los simbolos se extraen del catalogo de unidades del SAT"
+          },
+          "unidad": {
+            "type": "string",
+            "enum": [
+              "Pieza"
+            ],
+            "description": "Este campo hace referencia a la unidad en el que se mide el producto o servicio. La unidad se extrae del catalogo de unidades del SAT"
+          },
+          "claveUnidad": {
+            "type": "string",
+            "enum": [
+              "H87"
+            ],
+            "description": "Este campo hace referencia a la clave de la unidad en el que se mide el producto o servicio. La clave de la unidad se extrae del catalogo de unidades del SAT"
+          },
+          "cantidad": {
+            "type": "number",
+            "enum": [
+              1
+            ],
+            "description": "Cantidad del producto o servicio, para la creacion recomendamos usar 1"
+          },
+          "valorUnitario": {
+            "type": "number",
+            "enum": [
+              1
+            ],
+            "description": "Valor por unidad del producto o servicio"
+          },
+          "importe": {
+            "type": "number",
+            "description": "Hace referencia al valor resultante entre la cantidad multiplicado por el valor unitario el valor unitario"
+          },
+          "importeImpuesto": {
+            "type": "number",
+            "description": "Hace referencia al valor resultante entre el importe - descuento + impuestos, se recomiendo utilizar IVA trasladado (0%, 8%, 16%) en este punto."
+          },
+          "descuento": {
+            "type": "number",
+            "description": "Se refiere al descuento en dinero que es aplicable al producto o servicio, en caso de que no aplique se recominda mandar 0"
+          },
+          "porcDescuento": {
+            "type": "number",
+            "description": "Se refiere al descuento en procentaje que es aplicable al producto o servicio, en caso de que no aplique se recominda mandar 0"
+          },
+          "tipoDescuento": {
+            "type": "string",
+            "enum": [
+              "%",
+              "$"
+            ],
+            "description": "Se refiere al tipo descuento en procentaje que es aplicable al producto o servicio"
+          },
+          "objetoImpCode": {
+            "type": "string",
+            "description": "Se refiere al tipo descuento que se aplica al producto o servicio"
+          },
+          "objetoImpDescription": {
+            "type": "string"
+          },
+          "impuestos": {
+            "type": "object",
+            "description": "Se refiere a los impuestos que se aplican al producto o servicio como IVA, ISR o IEPS.  \n\n Se recomienda por API aplicar solamente IVA y utilizar la siguiente estructura:\n\r\t  {\"traslados\":\n\r\t\t  {\"traslado\":[\n\r\t\t\t{\n\r\t\t\t\t\"key\":\"87dc1a03-ff53-4eec-b543-4602b37dd039\",\n\r\t\t\t\t\"tasaOcuota\":\"\",\n\r\t\t\t\t\"valorTasaOcuota\":0.16,\n\r\t\t\t\t\"valorTasaOcuotaPorc\":16,\n\r\t\t\t\t\"impuesto\":\"002\",\n\r\t\t\t\t\"nombreImpuesto\":\n\r\t\t\t\t\"IVA\",\n\r\t\t\t\t\"tipoImpuesto\":\n\r\t\t\t\t\"traslado\",\n\r\t\t\t\t\"rangoFijo\":\"Fijo\",\n\r\t\t\t\t\"tipoFactor\":\"Tasa\"\n\r\t\t\t}\n\r\t\t]\n\r\t\t},\n\r\t\t\"retenciones\":{\"retencion\":[]}}"
+          },
+          "sku": {
+            "type": "string"
+          },
+          "codigoBarras": {
+            "type": "string"
+          },
+          "tipo": {
+            "type": "string",
+            "description": "Se refiere al tipo: producto o servicio",
+            "enum": [
+              "product",
+              "service"
+            ]
+          }
+        }
+      },
+      "ReceiverForm": {
+        "properties": {
+          "outsider": {
+            "type": "boolean",
+            "description": "Hace referencia si el nuevo cliente es extranjero",
+            "enum": [
+              false
+            ]
+          },
+          "clientCode": {
+            "type": "string",
+            "description": "Código de uso interno, se recomiendo usar codigos alfanumericos de mas de 5 digitos y menor a 100"
+          },
+          "tradeName": {
+            "type": "string",
+            "description": "Nombre comercial"
+          },
+          "businessName": {
+            "type": "string",
+            "description": "Razón social"
+          },
+          "taxId": {
+            "type": "string",
+            "description": "RFC (Registro Federal de Contribuyentes)"
+          },
+          "useCfdiId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Se refiere a la utilidad que se le dará a la factura para las deducciones personales. Para este campo es necesario que vea nuestro catalogo de usos de CFDI para extraer el id que este campo requiere"
+          },
+          "taxRegimeId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Se refiere al tipo de regimen en el cual esta registrado el cliente. Para este campo es necesario que vea nuestro catalogo de regimen fiscales para extraer el id que este campo requiere"
+          },
+          "address": {
+            "type": "string",
+            "description": "Se refiere al dirección que tiene registrada en el sat el cliente (fisica o moral)"
+          },
+          "postalCode": {
+            "type": "string",
+            "description": "Código postal"
+          },
+          "contacts": {
+            "type": "array",
+            "description": "Hace referencia a la información del cliente, este campo acepta un ***arreglo*** con la siguiente estructura de contacto  \n\n\t{\n\n\t\"fullName\": \"yourName\", \n\n\t \"celPhone\": {\"short\": \"MX\",\"code\": 52,\"phone\": \"yourPhone\"}, \n\n\t \"officePhone\": {\"short\": \"MX\",\"code\": 52,\"phone\": \"yourPhone\"}, \n\n\t \"email\": \"yourEmail\", \n\n\t \"address\": \"yourAddress\",\n\n\t \"socialNetworks\": {} \n\n\t }"
+          }
+        }
+      },
+      "IssuerForm": {
+        "properties": {
+          "certFile": {
+            "type": "string",
+            "format": "base64",
+            "description": "Archivo .cer en base 64"
+          },
+          "keyFile": {
+            "type": "string",
+            "format": "base64",
+            "description": "Archivo .key en base 64"
+          },
+          "password": {
+            "type": "string",
+            "description": "Contraseña del archivo .key"
+          },
+          "tradeName": {
+            "type": "string",
+            "description": "Nombre comercial"
+          },
+          "businessName": {
+            "type": "string",
+            "description": "Razón social"
+          },
+          "taxId": {
+            "type": "string",
+            "description": "RFC (Registro Federal de Contribuyentes)"
+          },
+          "taxRegimeId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Se refiere al tipo de regimen en el cual esta registrado el cliente. Para este campo es necesario que vea nuestro catalogo de regimen fiscales para extraer el id que este campo requiere"
+          },
+          "address": {
+            "type": "string",
+            "description": "Se refiere al dirección que tiene registrada en el sat el cliente (fisica o moral)"
+          },
+          "postalCode": {
+            "type": "string",
+            "description": "Código postal"
+          },
+          "lastFolio": {
+            "type": "string",
+            "description": "Se refiere al ultimo folio de factura timbrada, en caso de que no tenga facturas asociadas a este RFC dejar en 0",
+            "enum": [0]
+
+          },
+          "lastFolioPago": {
+            "type": "string",
+            "description": "Pago del ultimo folio utilizado. En caso de que no tenga facturas asociadas a este RFC dejar en 0",
+            "enum": [0]
+          },
+          "cfdiVersion": {
+            "type": "string",
+            "description": "Se refiere a la versión del CFDI(3.3, 4.0)",
+            "enum": ["3.3", "4.0"]
+          },
+          "pagoVersion": {
+            "type": "string",
+            "description": "Se refiere a al complemento de pago(Version 1.0, Version 2.0)",
+            "enum": ["1.0", "2.0"]
+          },
+          "cancelacionVersion": {
+            "type": "string",
+            "description": "Se refiere a la versión del CFDI(3.3, 4.0) cancelación",
+            "enum": ["3.3", "4.0"]
+          }
+        }
+      }
+    },
+    "parameters": {
+      "Extended": {
+        "in": "query",
+        "name": "extended",
+        "description": "Provides `LocationConstraint` metadata in the listing.",
+        "required": false,
+        "schema": {
+          "type": "boolean"
+        },
+        "allowEmptyValue": true
+      }
+    }
+  }
+}
