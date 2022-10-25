@@ -772,7 +772,7 @@
         "tags": [
           "Emisores"
         ],
-        "description": "Para actualizar un ***emisor (issuer)***, debe proporcionar el los encabezados ***API-ID, API-Key y CompanyID perteneciente***, al igual que los archivos ***.cer y .ker*** con su contraseña correspondiente",
+        "description": "Para actualizar un ***emisor (issuer)***, debe proporcionar en los encabezados ***API-ID, API-Key y CompanyID perteneciente***, al igual que los archivos ***.cer y .ker*** con su contraseña correspondiente",
         "parameters": [
           {
             "name": "API-ID",
