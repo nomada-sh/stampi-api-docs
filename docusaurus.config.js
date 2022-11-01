@@ -8,7 +8,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "Stampi",
   tagline: "Sistema de facturación",
-  url: "https://getstampi.com",
+  url: "https://stampi-doc.netlify.app/",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -59,7 +59,7 @@ const config = {
           { to: "/api", label: "API", position: "left" },
           { to: "/blog", label: "Webhooks", position: "left" },
           {
-            href: "https://github.com/facebook/docusaurus",
+            href: "https://github.com/nomada-sh/stampi-api-docs",
             label: "GitHub",
             position: "right",
           },
@@ -86,11 +86,15 @@ const config = {
             ],
           },
           {
-            title: "Community",
+            title: "Nomada Software House",
             items: [
               {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com",
+                label: "Stampi",
+                href: "https://getstampi.com/",
+              },
+              {
+                label: "React Native Eyecandy",
+                href: "https://eyecandy.nomada.cloud/",
               },
             ],
           },
