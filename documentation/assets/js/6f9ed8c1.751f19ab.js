@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkstampi_api_doc=self.webpackChunkstampi_api_doc||[]).push([[847],{76233:p=>{p.exports=JSON.parse('{"name":"docusaurus-plugin-openapi","id":"default"}')}}]);

@@ -1,25 +1,23 @@
 ---
-slug: welcome
-title: Welcome
-authors: [slorber, yangshun]
-tags: [facebook, hello, docusaurus]
+slug: Creando un Webhook
+title: Creando un Webhook
 ---
 
-[Docusaurus blogging features](https://docusaurus.io/docs/blog) are powered by the [blog plugin](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog).
+1. Lo primero que debemos hacer es entrar a [Stampi.](https://getstampi.com/)
 
-Simply add Markdown files (or folders) to the `blog` directory.
+2. Una vez dentro debes darle click a la ⚙️ que viene en el menu lateral
+  
+ <img src="/img/configuracion.png" alt="drawing" width="800"/>
 
-Regular blog authors can be added to `authors.yml`.
+3. Dentro del menu de configuración nos posicionamos en la opción Webhooks y damos click en el botón 
+    **Agregar Webhook**
 
-The blog post date can be extracted from filenames, such as:
+ <img src="/img/webhook.png" alt="webhook"/>
 
-- `2019-05-30-welcome.md`
-- `2019-05-30-welcome/index.md`
+4. Se nos abrirá un modal donde nos pedirá el nombre de nuestro nuevo webhook y el ***endpoint*** donde el webhook emitirá los eventos.
+    **Agregar Webhook**
 
-A blog post folder can be convenient to co-locate blog post images:
+ <img src="/img/modalWebhook.png" alt="webhook"/>
 
-![Docusaurus Plushie](./docusaurus-plushie-banner.jpeg)
 
-The blog supports tags as well!
-
-**And if you don't want a blog**: just delete this directory, and use `blog: false` in your Docusaurus config.
+**Listo, tenemos lo necesario para utilizar nuestro webhook.**

@@ -57,7 +57,7 @@ const config = {
             label: "Empezando",
           },
           { to: "/api", label: "API", position: "left" },
-          { to: "/blog", label: "Blog", position: "left" },
+          { to: "/blog", label: "Webhooks", position: "left" },
           {
             href: "https://github.com/facebook/docusaurus",
             label: "GitHub",
@@ -72,8 +72,16 @@ const config = {
             title: "Docs",
             items: [
               {
-                label: "Tutorial",
+                label: "Empezando",
                 to: "/docs/intro",
+              },
+              {
+                label: "API",
+                to: "/api",
+              },
+              {
+                label: "Webhooks",
+                to: "/blog",
               },
             ],
           },
@@ -82,33 +90,12 @@ const config = {
             items: [
               {
                 label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
-              },
-              {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
-              },
-              {
-                label: "Twitter",
-                href: "https://twitter.com/docusaurus",
-              },
-            ],
-          },
-          {
-            title: "More",
-            items: [
-              {
-                label: "Blog",
-                to: "/blog",
-              },
-              {
-                label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
+                href: "https://stackoverflow.com",
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Nomada Software House.`,
       },
       prism: {
         theme: lightCodeTheme,
