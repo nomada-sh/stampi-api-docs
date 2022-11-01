@@ -337,7 +337,7 @@
           "tags": [
             "Conceptos"
           ],
-          "description": "Para obtener un concepto en específico debe enviar como parte de la url el ***ID*** del concepto a consultar y en los encabezados el ***ID*** de la ***compañía*** a la que pertenece usted como usuario [Endpoints and storage locations](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints).",
+          "description": "Para obtener un concepto en específico debe enviar como parte de la url el ***ID*** del concepto a consultar y proporcionar el los encabezados su ***API-ID y API-Key***.",
           "parameters": [
             {
               "name": "API-ID",
@@ -386,7 +386,7 @@
           "tags": [
             "Conceptos"
           ],
-          "description": "Para modificar un concepto debe enviar en los encabezados el ***ID*** de la ***compañía*** a la que pertenece usted como usuario y llenar correctamente el cuerpo que requiere el concepto. Más abajo se muestra el cuerpo del concepto.",
+          "description": "Para modificar un concepto debe enviar en los encabezados su ***API-ID y API-Key*** y llenar correctamente el cuerpo que requiere el concepto. Más abajo se muestra el cuerpo del concepto.",
           "parameters": [
             {
               "name": "API-ID",
