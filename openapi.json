@@ -55,7 +55,7 @@
             "200": {
               "description": "Success Response",
               "content": {
-                "text/plain": {
+                "application/json": {
                   "schema": {
                     "$ref": "#/components/schemas/UseCFDIResponse"
                   }
@@ -97,7 +97,7 @@
             "200": {
               "description": "Success Response",
               "content": {
-                "text/plain": {
+                "application/json": {
                   "schema": {
                     "$ref": "#/components/schemas/RegimenResponse"
                   }
@@ -148,7 +148,7 @@
             "200": {
               "description": "Success Response",
               "content": {
-                "text/plain": {
+                "application/json": {
                   "schema": {
                     "$ref": "#/components/schemas/ProductsServicesResponse"
                   }
@@ -199,7 +199,7 @@
             "200": {
               "description": "Success Response",
               "content": {
-                "text/plain": {
+                "application/json": {
                   "schema": {
                     "$ref": "#/components/schemas/UnitsResponse"
                   }
@@ -259,7 +259,7 @@
             "200": {
               "description": "ok",
               "content": {
-                "text/plain": {
+                "application/json": {
                   "schema": {
                     "$ref": "#/components/schemas/ConceptResponseArray"
                   }
@@ -319,7 +319,7 @@
             "200": {
               "description": "Success Response",
               "content": {
-                "text/plain": {
+                "application/json": {
                   "schema": {
                     "$ref": "#/components/schemas/ConceptResponse"
                   }
@@ -371,7 +371,7 @@
             "200": {
               "description": "ok",
               "content": {
-                "text/plain": {
+                "application/json": {
                   "schema": {
                     "$ref": "#/components/schemas/ConceptResponse"
                   }
@@ -469,7 +469,7 @@
             "200": {
               "description": "Success Response",
               "content": {
-                "text/plain": {
+                "application/json": {
                   "schema": {
                     "$ref": "#/components/schemas/ReceiverResponseArray"
                   }
@@ -521,7 +521,7 @@
             "200": {
               "description": "Success Response",
               "content": {
-                "text/plain": {
+                "application/json": {
                   "schema": {
                     "$ref": "#/components/schemas/ReceiverResponse"
                   }
@@ -573,7 +573,7 @@
             "200": {
               "description": "Success Response",
               "content": {
-                "text/plain": {
+                "application/json": {
                   "schema": {
                     "$ref": "#/components/schemas/ReceiverResponse"
                   }
@@ -623,7 +623,7 @@
             "200": {
               "description": "Success Response",
               "content": {
-                "text/plain": {
+                "application/json": {
                   "schema": {
                     "$ref": "#/components/schemas/ReceiverResponse"
                   }
@@ -675,7 +675,7 @@
             "201": {
               "description": "Success Response",
               "content": {
-                "text/plain": {
+                "application/json": {
                   "schema": {
                     "$ref": "#/components/schemas/ReceiverResponse"
                   }
@@ -717,7 +717,7 @@
             "201": {
               "description": "Success Response",
               "content": {
-                "text/plain": {
+                "application/json": {
                   "schema": {
                     "$ref": "#/components/schemas/IssuersResponseArray"
                   }
@@ -786,7 +786,7 @@
             "200": {
               "description": "Success Response",
               "content": {
-                "text/plain": {
+                "application/json": {
                   "schema": {
                     "$ref": "#/components/schemas/IssuersResponse"
                   }
@@ -845,7 +845,7 @@
             "201": {
               "description": "Success Response",
               "content": {
-                "text/plain": {
+                "application/json": {
                   "schema": {
                     "$ref": "#/components/schemas/IssuersResponse"
                   }
@@ -896,7 +896,7 @@
             "201": {
               "description": "Success Response",
               "content": {
-                "text/plain": {
+                "application/json": {
                   "schema": {
                     "$ref": "#/components/schemas/IssuersResponse"
                   }
@@ -945,7 +945,7 @@
             "200": {
               "description": "Success Response",
               "content": {
-                "text/plain": {
+                "application/json": {
                   "schema": {
                     "$ref": "#/components/schemas/IssuersResponse"
                   }
@@ -987,7 +987,7 @@
             "200": {
               "description": "Success Response",
               "content": {
-                "text/plain": {
+                "application/json": {
                   "schema": {
                     "$ref": "#/components/schemas/InvoiceResponse"
                   }
@@ -1029,7 +1029,7 @@
             "200": {
               "description": "Success Response",
               "content": {
-                "text/plain": {
+                "application/json": {
                   "schema": {
                     "$ref": "#/components/schemas/InvoiceResponseStamped"
                   }
@@ -1071,7 +1071,7 @@
             "200": {
               "description": "Success Response",
               "content": {
-                "text/plain": {
+                "application/json": {
                   "schema": {
                     "$ref": "#/components/schemas/InvoiceResponseStamped"
                   }
@@ -1136,7 +1136,7 @@
               "201": {
                 "description": "Success Response",
                 "content": {
-                  "text/plain": {
+                  "application/json": {
                     "schema": {
                       "$ref": "#/components/schemas/InvoiceResponse2"
                     }
@@ -1199,7 +1199,7 @@
             "201": {
               "description": "Success Response",
               "content": {
-                "text/plain": {
+                "application/json": {
                   "schema": {
                     "$ref": "#/components/schemas/InvoiceResponse2"
                   }
@@ -1250,7 +1250,7 @@
             "200": {
               "description": "Success Response",
               "content": {
-                "text/plain": {
+                "application/json": {
                   "schema": {
                     "$ref": "#/components/schemas/InvoiceResponse"
                   }
@@ -1434,7 +1434,8 @@
             },
             "contacts": {
               "type": "array",
-              "description": "Hace referencia a la información del cliente, este campo acepta un ***arreglo*** con la siguiente estructura de contacto  \n\n\t{\n\n\t\"fullName\": \"yourName\", \n\n\t \"celPhone\": {\"short\": \"MX\",\"code\": 52,\"phone\": \"yourPhone\"}, \n\n\t \"officePhone\": {\"short\": \"MX\",\"code\": 52,\"phone\": \"yourPhone\"}, \n\n\t \"email\": \"yourEmail\", \n\n\t \"address\": \"yourAddress\",\n\n\t \"socialNetworks\": {} \n\n\t }"
+              "description": "Hace referencia a la información del cliente, este campo acepta un ***arreglo*** con la siguiente estructura de contacto  \n\n\t{\n\n\t\"fullName\": \"yourName\", \n\n\t \"celPhone\": {\"short\": \"MX\",\"code\": 52,\"phone\": \"yourPhone\"}, \n\n\t \"officePhone\": {\"short\": \"MX\",\"code\": 52,\"phone\": \"yourPhone\"}, \n\n\t \"email\": \"yourEmail\", \n\n\t \"address\": \"yourAddress\",\n\n\t \"socialNetworks\": {} \n\n\t }",
+              "example": "[]"
             }
           }
         },
@@ -1572,20 +1573,20 @@
             "properties": {
                 "traslados": {"type": "object", "$ref": "#/components/schemas/TaxTransferredArr"},
                 "retenciones": {"type": "object", "$ref": "#/components/schemas/TaxWithHeld"},
-                "totalImpuestosRetenido": {"type": "number", "example": 16, "description": "Suma total de los importes de impuesto retenidos"},
-                "totalImpuestosTrasladados": {"type": "number", "example": 16, "description": "Suma total de los importes de impuesto trasladados"}
+                "totalImpuestosRetenido": {"type": "number", "example": 0, "description": "Suma total de los importes de impuesto retenidos"},
+                "totalImpuestosTrasladados": {"type": "number", "example": 0, "description": "Suma total de los importes de impuesto trasladados"}
             }
         },
         "TaxTransferredArr": {
             "type": "object",
             "properties": {
-                "Traslado": {"type":"array","items": { "$ref": "#/components/schemas/Taxes"}}
+                "Traslado": {"type":"array","items": { "$ref": "#/components/schemas/Taxes"}, "example": []}
             }
         },
         "TaxWithHeld": {
             "type": "object",
             "properties": {
-                "Retencion": {"type":"array","items": { "$ref": "#/components/schemas/Taxes"}}
+                "Retencion": {"type":"array","items": { "$ref": "#/components/schemas/Taxes"}, "example": []}
             }
         },
         "Tax": {

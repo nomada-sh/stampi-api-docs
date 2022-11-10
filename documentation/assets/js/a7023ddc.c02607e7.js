@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkstampi_api_doc=self.webpackChunkstampi_api_doc||[]).push([[1713],{53457:a=>{a.exports=JSON.parse('[{"label":"stampi","permalink":"/blog/tags/stampi","count":1},{"label":"webhooks","permalink":"/blog/tags/webhooks","count":1}]')}}]);
